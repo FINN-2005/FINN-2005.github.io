@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+About - SimLab
+{% endblock %}
+
+{% block content %}
+
+<section class="about">
+
+    <h1>About SimLab</h1>
+
+    <p>
+        SimLab is a collection of interactive simulations designed to explain
+        core concepts used in game development.
+    </p>
+
+    <p>
+        Many systems in game engines rely heavily on mathematics and physics.
+        Concepts like vector math, simulation loops, and physical forces form
+        the foundation of rendering, movement, and interaction in games.
+    </p>
+
+    <p>
+        This site aims to break down these ideas using visual and interactive
+        examples. Each article includes a simulation built with JavaScript
+        and p5.js so the concepts can be explored directly.
+    </p>
+
+</section>
+
+<section class="topics">
+
+    <h2>Topics Covered</h2>
+
+    <ul>
+        <li>Vector math and dot products</li>
+        <li>Spring physics and oscillation</li>
+        <li>The classic game loop architecture</li>
+    </ul>
+
+</section>
+
+<section class="tech">
+
+    <h2>Technology</h2>
+
+    <ul>
+        <li>FastAPI for routing</li>
+        <li>Jinja templating</li>
+        <li>JavaScript + p5.js for simulations</li>
+    </ul>
+
+</section>
+
+{% endblock %}

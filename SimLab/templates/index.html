@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+SimLab
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <h1>SimLab</h1>
+    <p>Interactive simulations explaining core concepts in game development.</p>
+</section>
+
+
+<section class="blog-grid">
+
+    <a class="blog-card" href="/blogs/vector">
+        <h2>Vector Math</h2>
+        <p>
+            Understanding vectors and the power of the dot product.
+            The foundation of rendering, physics, and movement.
+        </p>
+    </a>
+
+
+    <a class="blog-card" href="/blogs/spring">
+        <h2>Spring Simulation</h2>
+        <p>
+            A mass-spring system using Hooke's law.
+            Explore oscillation, stiffness, and damping interactively.
+        </p>
+    </a>
+
+
+    <a class="blog-card" href="/blogs/gameloop">
+        <h2>Game Loop</h2>
+        <p>
+            The architecture behind every game engine.
+            Init → Setup → Update → Draw.
+        </p>
+    </a>
+
+</section>
+
+{% endblock %}

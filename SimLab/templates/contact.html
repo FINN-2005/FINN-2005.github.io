@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact - SimLab
+{% endblock %}
+
+{% block content %}
+
+<section class="contact">
+
+    <h1>Contact</h1>
+
+    <p>
+        If you have questions, feedback, or suggestions for new simulations,
+        feel free to send a message.
+    </p>
+
+    {% if success %}
+        <p class="success-message">Message sent successfully!</p>
+    {% endif %}
+
+    <form action="/submit" method="post" class="contact-form">
+
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Message</label>
+        <textarea name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+</section>
+
+{% endblock %}
