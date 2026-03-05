@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vector Math - SimLab</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- p5.js -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.min.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h1 class="logo">SimLab</h1>
+
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </nav>
+
+
+    <main class="container">
+
+        <section class="blog">
+
+            <h1>Vector Math and the Dot Product</h1>
+
+            <p>
+                Vectors are one of the most fundamental tools in game development.
+                They are used everywhere: movement, rendering, lighting, physics,
+                and collision detection.
+            </p>
+
+            <p>
+                A vector represents both direction and magnitude. In 2D space it can
+                be written as:
+            </p>
+
+            <pre>
+                v = (x, y)
+            </pre>
+
+        </section>
+
+
+        <section class="simulation">
+
+            <h2>Interactive Simulation</h2>
+
+            <p>
+                Drag the endpoints of the vectors to explore how their relationship
+                affects the dot product.
+            </p>
+
+            <div id="vector-canvas"></div>
+
+        </section>
+
+
+        <section class="explanation">
+
+            <h2>The Dot Product</h2>
+
+            <p>
+                The dot product measures how aligned two vectors are.
+            </p>
+
+            <pre>
+                dot = ax * bx + ay * by
+            </pre>
+
+            <p>
+                If the dot product is positive, the vectors point in roughly the same
+                direction.
+            </p>
+
+            <p>
+                If it is zero, the vectors are perpendicular.
+            </p>
+
+            <p>
+                If it is negative, the vectors point in opposite directions.
+            </p>
+
+        </section>
+
+
+        <section class="usecases">
+
+            <h2>Why This Matters in Game Development</h2>
+
+            <ul>
+                <li>Lighting calculations</li>
+                <li>Checking if an enemy is in front of a player</li>
+                <li>Projection and reflection</li>
+                <li>Physics and collision detection</li>
+            </ul>
+
+        </section>
+
+
+        <script src="../assets/js/sketches/vector.js"></script>
+
+
+    </main>
+
+
+    <footer class="footer">
+        <p>SimLab — Interactive Game Dev Simulations</p>
+    </footer>
+
+</body>
+
+</html>

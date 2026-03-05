@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game Loop - SimLab</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- p5.js -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.min.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h1 class="logo">SimLab</h1>
+
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </nav>
+
+
+    <main class="container">
+
+
+
+
+        <section class="blog">
+
+            <h1>The Game Loop</h1>
+
+            <p>
+                At the heart of every game engine is the game loop. It is the system
+                responsible for updating the world and rendering frames continuously.
+            </p>
+
+            <p>
+                Every frame, the engine updates the game state and then draws the
+                result to the screen.
+            </p>
+
+        </section>
+
+
+        <section class="simulation">
+
+            <h2>Interactive Visualization</h2>
+
+            <p>
+                This simulation demonstrates the continuous update and draw cycle
+                used by most games.
+            </p>
+
+            <div id="gameloop-canvas"></div>
+
+        </section>
+
+
+        <section class="architecture">
+
+            <h2>Typical Game Loop Structure</h2>
+
+            <pre>
+                init()
+
+                setup()
+
+                while (gameRunning) {
+                    update()
+                    draw()
+                }
+            </pre>
+
+            <p>
+                Each stage has a specific responsibility in the game engine.
+            </p>
+
+        </section>
+
+
+        <section class="steps">
+
+            <h2>Stages of the Loop</h2>
+
+            <ul>
+                <li><strong>Init</strong> – Load resources and initialize systems.</li>
+                <li><strong>Setup</strong> – Create objects and initial game state.</li>
+                <li><strong>Update</strong> – Process physics, input, and game logic.</li>
+                <li><strong>Draw</strong> – Render the current frame to the screen.</li>
+            </ul>
+
+        </section>
+
+
+        <section class="importance">
+
+            <h2>Why the Game Loop Matters</h2>
+
+            <p>
+                The game loop ensures that the simulation runs continuously and
+                consistently. Physics systems, AI, animations, and rendering all rely
+                on this repeating update cycle.
+            </p>
+
+            <p>
+                Frameworks like p5.js implement this automatically through the
+                <strong>setup()</strong> and <strong>draw()</strong> functions.
+            </p>
+
+        </section>
+
+
+        <script src="../assets/js/sketches/gameloop.js"></script>
+
+
+    </main>
+
+
+    <footer class="footer">
+        <p>SimLab — Interactive Game Dev Simulations</p>
+    </footer>
+
+</body>
+
+</html>

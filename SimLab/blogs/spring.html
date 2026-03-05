@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Simulation - SimLab</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- p5.js -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.min.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h1 class="logo">SimLab</h1>
+
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </nav>
+
+
+    <main class="container">
+
+
+        <section class="blog">
+
+            <h1>Spring Simulation</h1>
+
+            <p>
+                Springs are a classic physics simulation used in many game systems.
+                They are useful for modeling elastic movement, soft constraints,
+                cloth simulation, and procedural animation.
+            </p>
+
+            <p>
+                The behavior of a spring is described by <strong>Hooke's Law</strong>.
+            </p>
+
+            <pre>
+F = -k(x - L)
+    </pre>
+
+            <p>
+                Where:
+            </p>
+
+            <ul>
+                <li><strong>F</strong> is the force applied</li>
+                <li><strong>k</strong> is the spring stiffness</li>
+                <li><strong>x</strong> is the current length</li>
+                <li><strong>L</strong> is the rest length</li>
+            </ul>
+
+        </section>
+
+
+        <section class="simulation">
+
+            <h2>Interactive Simulation</h2>
+
+            <p>
+                Drag the mass to stretch the spring and watch it oscillate.
+            </p>
+
+            <div id="spring-canvas"></div>
+
+        </section>
+
+
+        <section class="explanation">
+
+            <h2>How the Simulation Works</h2>
+
+            <p>
+                The spring pulls the mass back toward its rest length. The further the
+                mass moves from this rest position, the stronger the force becomes.
+            </p>
+
+            <p>
+                In simulations we also add damping to slowly reduce the energy of the
+                system and prevent infinite oscillation.
+            </p>
+
+            <pre>
+                velocity += force
+                position += velocity
+                velocity *= damping
+            </pre>
+
+        </section>
+
+
+        <section class="usecases">
+
+            <h2>Where Springs Are Used in Games</h2>
+
+            <ul>
+                <li>Camera smoothing</li>
+                <li>Character animation</li>
+                <li>Cloth simulation</li>
+                <li>Soft body physics</li>
+                <li>Procedural movement</li>
+            </ul>
+
+        </section>
+
+
+        <script src="../assets/js/sketches/spring.js"></script>
+
+
+    </main>
+
+
+    <footer class="footer">
+        <p>SimLab — Interactive Game Dev Simulations</p>
+    </footer>
+
+</body>
+
+</html>
