@@ -20,54 +20,6 @@ A fully static, GitHub Pages-ready version of the KCC Student Portal. No backend
 - **Events** - Upcoming college events with categories
 - **Documents** - Download course materials and resources
 
-## 🚀 Quick Start
-
-### Option 1: Deploy to GitHub Pages (Recommended)
-
-1. **Fork or clone this repository**
-   ```bash
-   git clone <repo-url>
-   cd static-site
-   ```
-
-2. **Push to GitHub**
-   ```bash
-   git remote add origin <your-github-repo-url>
-   git branch -M main
-   git push -u origin main
-   ```
-
-3. **Enable GitHub Pages**
-   - Go to your repository settings
-   - Scroll to "GitHub Pages" section
-   - Select "Deploy from a branch"
-   - Choose `main` branch and `/root` folder
-   - Save
-
-4. **Your site is live!** 🎉
-   - Your portal will be available at: `https://<username>.github.io/<repo-name>/`
-
-### Option 2: Deploy Locally
-
-Simply open `index.html` in your browser. No server required!
-
-```bash
-# macOS/Linux
-open index.html
-
-# Windows
-start index.html
-```
-
-### Option 3: Use Python's Built-in Server
-
-```bash
-# Python 3
-python -m http.server 8000
-
-# Then visit: http://localhost:8000
-```
-
 ## 📝 How to Update Content
 
 All content is embedded directly in HTML files. To update:
@@ -117,12 +69,6 @@ Edit `css/styles.css` and modify the CSS variables:
 }
 ```
 
-### Add Your Logo/Branding
-
-1. Add logo file to the project
-2. Replace "KCC Portal" text in sidebar with `<img src="logo.png" alt="KCC">`
-3. Update title in base template
-
 ### Update Meta Information
 
 Edit HTML `<head>` sections:
@@ -149,18 +95,12 @@ static-site/
 
 ## 🔧 Features Breakdown
 
-### Theme Switching
-- Automatically detects system preference (light/dark)
-- User can toggle with 🌙/☀️ button
-- Preference stored in localStorage
-
 ### Navigation
 - Sidebar with active link highlighting
 - Mobile-responsive menu
 - All pages link to each other
 
 ### Responsive Design
-- Mobile-first approach
 - Tailwind CSS breakpoints (sm, md, lg)
 - Touch-friendly buttons and spacing
 
@@ -206,3 +146,4 @@ Feel free to fork, customize, and submit improvements!
 **Made with ❤️ for KCC Students**
 
 Questions? Issues? Need help? Check the code or create an issue in the repository!
+
