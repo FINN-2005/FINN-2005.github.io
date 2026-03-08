@@ -1,0 +1,50 @@
+<!-- templates/documents.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header mb-8">
+    <h1 class="text-2xl font-bold">Documents</h1>
+    <p class="text-sm opacity-70 mt-2">Access course materials, syllabus, and study resources</p>
+</div>
+
+<!-- Documents Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for doc in documents %}
+    {% set file_ext = doc.title.split('.')[-1].upper() %}
+    <div class="card bg-base-100/60 shadow-lg hover:shadow-xl transition-shadow">
+        <div class="card-body">
+            <!-- File Type Badge -->
+            <div class="flex items-start justify-between mb-3">
+                <span class="badge badge-accent text-xs">{{ file_ext }}</span>
+                <span class="text-xs opacity-60">{{ doc.uploaded_at }}</span>
+            </div>
+
+            <!-- File Icon & Title -->
+            <div class="flex items-start space-x-3 mb-4">
+                <div class="text-3xl">{% if file_ext == 'PDF' %}📝{% elif file_ext in ['DOC', 'DOCX'] %}📄{% elif file_ext in ['XLS', 'XLSX'] %}📋{% elif file_ext in ['PPT', 'PPTX'] %}📏{% else %}📁{% endif %}</div>
+                <div class="flex-1">
+                    <h2 class="card-title text-base leading-tight">{{ doc.title }}</h2>
+                    <div class="text-xs opacity-70 mt-1">Document</div>
+                </div>
+            </div>
+
+            <!-- Download Stats -->
+            <div class="text-sm opacity-80 mb-4 space-y-1">
+                <div>{% if doc.get('size') %}💾 {{ doc.size }}{% endif %}</div>
+                <div>📅 Uploaded: {{ doc.uploaded_at }}</div>
+            </div>
+
+            <!-- Actions -->
+            <div class="card-actions justify-end">
+                <a href="{{ doc.file_url }}" class="btn btn-primary btn-sm" download>
+                    💾 Download
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "day": "Monday",
+    "subject": "Data Structures",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "room": "CSE-201"
+  },
+  {
+    "id": 2,
+    "day": "Monday",
+    "subject": "Operating Systems",
+    "start_time": "10:00",
+    "end_time": "11:00",
+    "room": "CSE-203"
+  },
+  {
+    "id": 3,
+    "day": "Tuesday",
+    "subject": "Artificial Intelligence",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "room": "CSE-205"
+  },
+  {
+    "id": 4,
+    "day": "Wednesday",
+    "subject": "Database Systems",
+    "start_time": "11:00",
+    "end_time": "12:00",
+    "room": "CSE-202"
+  },
+  {
+    "id": 5,
+    "day": "Thursday",
+    "subject": "Computer Networks",
+    "start_time": "13:00",
+    "end_time": "14:00",
+    "room": "CSE-204"
+  }
+]

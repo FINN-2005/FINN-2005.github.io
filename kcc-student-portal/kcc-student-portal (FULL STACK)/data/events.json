@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Annual Tech Summit 2026",
+    "category": "Conference",
+    "date": "2026-03-15",
+    "time": "09:00 AM - 05:00 PM",
+    "location": "Main Auditorium",
+    "description": "Join industry experts and innovators for keynote sessions, workshops, and networking opportunities. Topics include AI, cloud computing, and emerging technologies.",
+    "attendees": "500+"
+  },
+  {
+    "id": 2,
+    "title": "Campus Sports Day",
+    "category": "Sports",
+    "date": "2026-03-18",
+    "time": "08:00 AM - 04:00 PM",
+    "location": "Sports Complex",
+    "description": "Compete in cricket, volleyball, badminton, and athletics. All students welcome. Register your team by March 15.",
+    "attendees": "1000+"
+  },
+  {
+    "id": 3,
+    "title": "Cultural Fest Auditions",
+    "category": "Arts & Culture",
+    "date": "2026-03-12",
+    "time": "04:00 PM - 07:00 PM",
+    "location": "Performance Hall",
+    "description": "Open auditions for dance, music, drama, and art performances. Be part of our biggest celebration of the year!",
+    "attendees": "Open"
+  },
+  {
+    "id": 4,
+    "title": "Startup Pitch Competition",
+    "category": "Entrepreneurship",
+    "date": "2026-03-22",
+    "time": "02:00 PM - 06:00 PM",
+    "location": "Innovation Hub",
+    "description": "Showcase your startup ideas and compete for funding. Pitch in front of investors and mentors. Win up to ₹1,00,000!",
+    "attendees": "20 teams"
+  },
+  {
+    "id": 5,
+    "title": "Alumni Networking Night",
+    "category": "Networking",
+    "date": "2026-03-20",
+    "time": "06:00 PM - 09:00 PM",
+    "location": "Banquet Hall",
+    "description": "Connect with successful KCC alumni. Great opportunity for career guidance and mentorship. Light refreshments provided.",
+    "attendees": "100+"
+  },
+  {
+    "id": 6,
+    "title": "Workshop: Web Development Basics",
+    "category": "Workshop",
+    "date": "2026-03-14",
+    "time": "10:00 AM - 01:00 PM",
+    "location": "Lab 3",
+    "description": "Learn HTML, CSS, and JavaScript fundamentals. Perfect for beginners. Bring your laptop. Limited seats - register now!",
+    "attendees": "30"
+  }
+]

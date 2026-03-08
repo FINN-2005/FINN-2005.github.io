@@ -1,0 +1,106 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KCC Student Portal</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/styles.css">
+
+</head>
+
+<body class="bg-base-200">
+
+    <div class="flex h-screen">
+
+        <!-- Sidebar -->
+
+        <aside class="w-64 bg-base-100/75 backdrop-blur border-r">
+
+            <div class="p-6 border-b">
+                <h1 class="text-xl font-bold">KCC Portal</h1>
+                <p class="text-sm opacity-60">Student Dashboard</p>
+            </div>
+
+            <ul class="menu p-4 gap-2">
+
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/notices">Notices</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/timetable">Timetable</a></li>
+                <li><a href="/assignments">Assignments</a></li>
+                <li><a href="/documents">Documents</a></li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- Main Area -->
+
+        <div class="flex-1 flex flex-col">
+
+            <!-- Navbar -->
+
+            <header class="navbar bg-base-100/75 border-b backdrop-blur">
+
+                <div class="flex-1 px-6">
+                    <h2 class="text-lg font-semibold">KCC Student Portal</h2>
+                </div>
+
+                <div class="flex-none px-6 flex items-center space-x-4">
+
+                    <!-- theme toggle -->
+                    <button id="theme-toggle" class="btn btn-ghost btn-circle" title="Toggle light/dark">
+                        🌙
+                    </button>
+
+                    <div class="dropdown dropdown-end">
+
+                        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+
+                            <div
+                                class="w-10 rounded-full bg-primary text-primary-content flex items-center justify-center">
+                                S
+                            </div>
+
+                        </label>
+
+                        <ul tabindex="0"
+                            class="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+
+                            <li><a href="/logout">Logout</a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- Page Content -->
+
+            <main class="flex-1 overflow-y-auto p-6">
+
+                {% block content %}{% endblock %}
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

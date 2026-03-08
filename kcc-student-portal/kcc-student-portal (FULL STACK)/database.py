@@ -1,0 +1,20 @@
+# database.py
+
+import json
+from pathlib import Path
+
+DATA_DIR = Path("data")
+
+
+def load_data(filename: str):
+    path = DATA_DIR / filename
+    if not path.exists():
+        return []
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_data(filename: str, data):
+    path = DATA_DIR / filename
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)

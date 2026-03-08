@@ -1,0 +1,38 @@
+<!-- templates/notices.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header mb-8">
+    <h1 class="text-2xl font-bold">Notices</h1>
+    <p class="text-sm opacity-70 mt-2">Important announcements and updates from the college</p>
+</div>
+
+<!-- Notices Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {% for notice in notices %}
+    <div class="card bg-base-100/60 shadow-lg hover:shadow-xl transition-shadow">
+        <div class="card-body">
+            <!-- Date badge -->
+            <div class="flex items-start justify-between mb-3">
+                <span class="badge badge-primary text-xs">📢 Notice</span>
+                <span class="text-xs opacity-60">{% set date_parts = notice.date.split('-') %}{{ date_parts[2] }}-{{ date_parts[1] }}-{{ date_parts[0] }}</span>
+            </div>
+
+            <!-- Title -->
+            <h2 class="card-title text-lg leading-tight">{{ notice.title }}</h2>
+
+            <!-- Content -->
+            <p class="text-sm leading-relaxed my-3 opacity-90">{{ notice.content }}</p>
+
+            <!-- Action -->
+            <div class="card-actions justify-end mt-4">
+                <button class="btn btn-primary btn-sm">Read More</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

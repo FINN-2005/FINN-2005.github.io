@@ -1,0 +1,90 @@
+<!-- templates/dashboard.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header mb-6">
+    <h1 class="text-2xl font-bold">Dashboard</h1>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- Notices -->
+    <div class="card bg-base-100 shadow">
+        <div class="card-body">
+            <h2 class="card-title">Recent Notices</h2>
+            <ul class="text-sm space-y-2">
+                {% for notice in notices %}
+                <li>
+                    <strong>{{ notice.title }}</strong>
+                    <div class="opacity-70">{{ notice.date }}</div>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="card-actions justify-end">
+                <a href="/notices" class="btn btn-sm btn-primary">View All</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assignments -->
+    <div class="card bg-base-100 shadow">
+        <div class="card-body">
+            <h2 class="card-title">Assignments</h2>
+            <ul class="text-sm space-y-2">
+                {% for assignment in assignments %}
+                <li>
+                    <strong>{{ assignment.title }}</strong>
+                    <div class="opacity-70">Due: {{ assignment.due_date }}</div>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="card-actions justify-end">
+                <a href="/assignments" class="btn btn-sm btn-primary">View All</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upcoming Events -->
+    <div class="card bg-base-100 shadow">
+        <div class="card-body">
+            <h2 class="card-title">🎉 Upcoming Events</h2>
+            <ul class="text-sm space-y-3">
+                {% for event in events %}
+                <li>
+                    <strong>{{ event.title }}</strong>
+                    <div class="opacity-70">{{ event.date }} • {{ event.time }}</div>
+                    <div class="text-xs mt-1"><span class="badge badge-primary">{{ event.category }}</span></div>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="card-actions justify-end">
+                <a href="/events" class="btn btn-sm btn-primary">Explore All</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timetable -->
+    <div class="card bg-base-100 shadow">
+        <div class="card-body">
+            <h2 class="card-title">Today's Classes</h2>
+            <ul class="text-sm space-y-2">
+                {% for entry in timetable %}
+                <li>
+                    <strong>{{ entry.subject }}</strong>
+                    <div class="opacity-70">
+                        {{ entry.start_time }} - {{ entry.end_time }}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="card-actions justify-end">
+                <a href="/timetable" class="btn btn-sm btn-primary">Full Timetable</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

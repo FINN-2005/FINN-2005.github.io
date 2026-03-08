@@ -1,0 +1,103 @@
+<!-- templates/events.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header mb-8">
+    <h1 class="text-2xl font-bold">College Events</h1>
+    <p class="text-sm opacity-70 mt-2">Discover upcoming events, workshops, and celebrations on campus</p>
+</div>
+
+<!-- Filter/Category badges -->
+<div class="mb-6 flex flex-wrap gap-2">
+    <button class="btn btn-sm btn-ghost active" onclick="filterEvents('all')">All</button>
+    <button class="btn btn-sm btn-ghost" onclick="filterEvents('Conference')">Conference</button>
+    <button class="btn btn-sm btn-ghost" onclick="filterEvents('Sports')">Sports</button>
+    <button class="btn btn-sm btn-ghost" onclick="filterEvents('Arts & Culture')">Arts & Culture</button>
+    <button class="btn btn-sm btn-ghost" onclick="filterEvents('Workshop')">Workshop</button>
+    <button class="btn btn-sm btn-ghost" onclick="filterEvents('Entrepreneurship')">Entrepreneurship</button>
+</div>
+
+<!-- Events Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
+    {% for event in events %}
+    <div class="card bg-base-100/60 shadow-lg event-card" data-category="{{ event.category }}">
+        <div class="card-body">
+            <!-- Category badge -->
+            <div class="flex items-start justify-between mb-3">
+                <span class="badge badge-primary text-xs">{{ event.category }}</span>
+                <span class="text-xs opacity-60">{% set event_date = event.date.split('-') %}{{ event_date[2] }} {{ ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][event_date[1]|int - 1] }}</span>
+            </div>
+
+            <!-- Title -->
+            <h2 class="card-title text-lg">{{ event.title }}</h2>
+
+            <!-- Details Grid -->
+            <div class="grid grid-cols-2 gap-3 my-4 text-sm">
+                <div class="flex items-center space-x-2">
+                    <span class="text-primary">⏰</span>
+                    <div>
+                        <div class="text-xs opacity-60">Time</div>
+                        <div class="font-semibold">{{ event.time }}</div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-secondary">📍</span>
+                    <div>
+                        <div class="text-xs opacity-60">Location</div>
+                        <div class="font-semibold">{{ event.location }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <p class="text-sm leading-relaxed mb-3 opacity-90">{{ event.description }}</p>
+
+            <!-- Attendees -->
+            <div class="flex items-center space-x-2 text-xs opacity-70 mb-4">
+                <span>👥 Expected: <strong>{{ event.attendees }}</strong></span>
+            </div>
+
+            <!-- Action button -->
+            <div class="card-actions justify-end">
+                <button class="btn btn-primary btn-sm">Register Interest</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    function filterEvents(category) {
+        const cards = document.querySelectorAll('.event-card');
+        const buttons = document.querySelectorAll('button[onclick^="filterEvents"]');
+        
+        // Update active button
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        
+        // Filter cards
+        cards.forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+                card.style.display = '';
+                card.classList.add('animate-fade-in');
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in {
+        animation: fadeIn 0.3s ease-in-out;
+    }
+</style>
+
+{% endblock %}

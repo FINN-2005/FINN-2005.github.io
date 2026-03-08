@@ -1,0 +1,83 @@
+<!-- templates/timetable.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header mb-8">
+    <h1 class="text-2xl font-bold">Timetable</h1>
+    <p class="text-sm opacity-70 mt-2">Your complete class schedule for the week</p>
+</div>
+
+<!-- Day Filter -->
+<div class="mb-6 flex flex-wrap gap-2">
+    <button class="btn btn-sm btn-ghost active" onclick="filterByDay('all')">All Days</button>
+    <button class="btn btn-sm btn-ghost" onclick="filterByDay('Monday')">Mon</button>
+    <button class="btn btn-sm btn-ghost" onclick="filterByDay('Tuesday')">Tue</button>
+    <button class="btn btn-sm btn-ghost" onclick="filterByDay('Wednesday')">Wed</button>
+    <button class="btn btn-sm btn-ghost" onclick="filterByDay('Thursday')">Thu</button>
+    <button class="btn btn-sm btn-ghost" onclick="filterByDay('Friday')">Fri</button>
+</div>
+
+<!-- Timetable Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    {% for entry in timetable %}
+    <div class="card bg-base-100/60 shadow-lg timetable-card" data-day="{{ entry.day }}">
+        <div class="card-body">
+            <!-- Day Indicator -->
+            <div class="flex items-center justify-between mb-3">
+                <span class="badge badge-lg badge-primary">{{ entry.day }}</span>
+                <span class="text-xs opacity-60">Room {{ entry.room }}</span>
+            </div>
+
+            <!-- Subject Title -->
+            <h2 class="card-title text-lg">{{ entry.subject }}</h2>
+
+            <!-- Time Slot -->
+            <div class="flex items-center space-x-3 my-4">
+                <div class="w-1 h-12 bg-gradient-to-b from-primary to-secondary rounded"></div>
+                <div>
+                    <div class="text-sm font-semibold">{{ entry.start_time }} - {{ entry.end_time }}</div>
+                    <div class="text-xs opacity-70">Duration: {% set start_h = entry.start_time.split(':')[0]|int %}
+                    {% set end_h = entry.end_time.split(':')[0]|int %}
+                    {{ end_h - start_h }} hour(s)</div>
+                </div>
+            </div>
+
+            <!-- Professor/Details -->
+            <div class="text-sm opacity-80 mb-3">
+                <div class="mb-2">📍 <span class="opacity-90">Classroom {{ entry.room }}</span></div>
+                {% if entry.get('professor') %}
+                <div>📚 <span class="opacity-90">{{ entry.professor }}</span></div>
+                {% endif %}
+            </div>
+
+            <!-- Mark Attendance if available -->
+            <div class="card-actions justify-end">
+                <button class="btn btn-outline btn-sm">View Details</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    function filterByDay(day) {
+        const cards = document.querySelectorAll('.timetable-card');
+        const buttons = document.querySelectorAll('button[onclick^="filterByDay"]');
+        
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        
+        cards.forEach(card => {
+            if (day === 'all' || card.dataset.day === day) {
+                card.style.display = '';
+                card.classList.add('animate-fade-in');
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+{% endblock %}

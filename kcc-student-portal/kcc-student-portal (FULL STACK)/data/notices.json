@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Mid Semester Exam Schedule Released",
+    "content": "The mid semester exam schedule has been published. Please check with your department for the detailed timetable.",
+    "date": "2026-03-05"
+  },
+  {
+    "id": 2,
+    "title": "Hackathon Registration Open",
+    "content": "Students can now register for the annual KCC hackathon. Last date for registration is March 20.",
+    "date": "2026-03-04"
+  },
+  {
+    "id": 3,
+    "title": "Library Maintenance",
+    "content": "The library will remain closed on Sunday due to scheduled maintenance.",
+    "date": "2026-03-02"
+  },
+  {
+    "id": 4,
+    "title": "Placement Drive Announcement",
+    "content": "Infosys campus placement drive will be conducted next week for final year students.",
+    "date": "2026-03-01"
+  }
+]
