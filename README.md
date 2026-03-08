@@ -1,42 +1,50 @@
+
 # Personal Website
 
-This repository contains the source code for my personal website, hosted using GitHub Pages.
+This repository contains the source code for my personal website, hosted using **GitHub Pages**.
 
-Live site:
-https://finn-2005.github.io/
+🌐 **Live Site:**
+[https://finn-2005.github.io/](https://finn-2005.github.io/)
 
-The site currently contains two main parts:
+The website acts as a hub for projects, experiments, and interactive technical explanations.
 
-* **Portfolio page** – a simple landing page linking to projects
-* **SimLab** – an interactive blog explaining core game development concepts through simulations
+---
+
+# Website Structure
+
+The site currently contains three main parts:
+
+1. **Portfolio** – Main landing page linking to projects
+2. **SimLab** – Interactive blog explaining game development concepts
+3. **KCC Student Portal** – A static student dashboard interface
 
 ---
 
 # Portfolio
 
-The main entry page of the site is:
+The main entry page of the website is:
 
 ```
 /portfolio.html
 ```
 
-This page acts as a central hub linking to projects and experiments hosted on the website.
+This page serves as a central hub linking to projects, experiments, and tools hosted on the website.
 
 ---
 
 # SimLab
 
-SimLab is an interactive blog focused on explaining foundational concepts used in game development.
+**SimLab** is an interactive blog focused on explaining foundational concepts used in **game development, physics simulation, and rendering**.
 
-Each article includes an interactive canvas where the behavior of a system can be explored visually.
+Each article includes an **interactive canvas simulation** so readers can visually explore how the systems work.
 
-Topics currently covered:
+### Topics currently covered
 
-* Vector math and the dot product
+* Vector math and the **dot product**
 * Spring physics and oscillation
-* The classic game loop architecture
+* The classic **game loop architecture**
 
-Live demo:
+### Live Demo
 
 ```
 https://finn-2005.github.io/simlab/
@@ -44,25 +52,58 @@ https://finn-2005.github.io/simlab/
 
 ---
 
-# Static vs Full-Stack Version
+# KCC Student Portal
 
-The version deployed on GitHub Pages has been **modified to work as a static site**, since GitHub Pages cannot run backend frameworks.
+The **KCC Student Portal** is a fully static student dashboard interface designed to simulate a college portal experience.
 
-The original **full stack application** is included in:
+It is built entirely with **HTML, CSS, and JavaScript**, making it deployable directly on **GitHub Pages without any backend**.
 
-`simlab/_full_stack`
+### Features
 
-The static version removes the FastAPI backend and Jinja templating so the site can run entirely from static files.
+* ✅ 100% Static – No backend required
+* ✅ Responsive design (desktop, tablet, mobile)
+* ✅ Dark/Light mode with localStorage persistence
+* ✅ Modern UI built with **Tailwind CSS** and **DaisyUI**
+* ✅ Fast and lightweight
+
+### Pages Included
+
+* **Dashboard** – Overview of notices, assignments, and events
+* **Notices** – College announcements
+* **Assignments** – Coursework tracking
+* **Timetable** – Class schedule
+* **Events** – Upcoming college events
+* **Documents** – Course materials and resources
+
+### Project Location
+
+```
+/kcc-student-portal
+```
 
 ---
 
-# Running the Full Stack Version
+# Static vs Full-Stack Version (SimLab)
+
+The version deployed on GitHub Pages has been **modified to work as a static site**, since GitHub Pages cannot run backend frameworks.
+
+The original **full-stack version** of SimLab is included in:
+
+```
+simlab/_full_stack
+```
+
+The static version removes the **FastAPI backend and Jinja templating**, allowing the site to run entirely from static files.
+
+---
+
+# Running the Full-Stack Version (SimLab)
 
 To run the original FastAPI application locally:
 
 ### 1. Install Python
 
-Python 3.10+ is recommended.
+Python **3.10+** is recommended.
 
 ### 2. Install dependencies
 
@@ -88,19 +129,21 @@ http://127.0.0.1:8000
 
 # Technologies Used
 
-Frontend
+### Frontend
 
 * HTML
 * CSS
 * JavaScript
+* Tailwind CSS
+* DaisyUI
 * p5.js (for simulations)
 
-Backend (full stack version)
+### Backend (Full-Stack SimLab Version)
 
 * FastAPI
 * Jinja templating
 
-Hosting
+### Hosting
 
 * GitHub Pages
 
@@ -108,4 +151,9 @@ Hosting
 
 # Purpose
 
-This website serves as a place to experiment with interactive explanations of technical topics, especially in areas related to game development, physics simulation, and rendering concepts.
+This website serves as a place to:
+
+* Experiment with **interactive technical explanations**
+* Explore **game development concepts**
+* Build **useful web tools and interfaces**
+* Document personal projects and experiments
