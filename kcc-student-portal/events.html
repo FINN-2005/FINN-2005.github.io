@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCC Student Portal - Events</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        (function() {
+            const stored = localStorage.getItem('theme');
+            if (stored) {
+                document.documentElement.setAttribute('data-theme', stored);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-base-200">
+
+    <div class="flex h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-base-100/75 backdrop-blur border-r overflow-y-auto">
+
+            <div class="p-6 border-b">
+                <h1 class="text-xl font-bold">KCC Portal</h1>
+                <p class="text-sm opacity-60">Student Dashboard</p>
+            </div>
+
+            <ul class="menu p-4 gap-2">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="notices.html">Notices</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="documents.html">Documents</a></li>
+            </ul>
+
+        </aside>
+
+        <!-- Main Area -->
+        <div class="flex-1 flex flex-col">
+
+            <!-- Navbar -->
+            <header class="navbar bg-base-100/75 border-b backdrop-blur">
+
+                <div class="flex-1 px-6">
+                    <h2 class="text-lg font-semibold">KCC Student Portal</h2>
+                </div>
+
+                <div class="flex-none px-6 flex items-center space-x-4">
+                    <button id="theme-toggle" class="btn btn-ghost btn-circle" title="Toggle light/dark">
+                        🌙
+                    </button>
+                </div>
+
+            </header>
+
+            <!-- Page Content -->
+            <main class="flex-1 overflow-y-auto p-6">
+
+                <div class="page-header mb-8">
+                    <h1 class="text-2xl font-bold">College Events</h1>
+                    <p class="text-sm opacity-70 mt-2">Discover upcoming events, workshops, and celebrations on campus</p>
+                </div>
+
+                <!-- Filter/Category badges -->
+                <div class="mb-6 flex flex-wrap gap-2">
+                    <button class="btn btn-sm btn-ghost active" onclick="filterEvents('all')">All</button>
+                    <button class="btn btn-sm btn-ghost" onclick="filterEvents('Conference')">Conference</button>
+                    <button class="btn btn-sm btn-ghost" onclick="filterEvents('Sports')">Sports</button>
+                    <button class="btn btn-sm btn-ghost" onclick="filterEvents('Arts & Culture')">Arts & Culture</button>
+                    <button class="btn btn-sm btn-ghost" onclick="filterEvents('Workshop')">Workshop</button>
+                    <button class="btn btn-sm btn-ghost" onclick="filterEvents('Entrepreneurship')">Entrepreneurship</button>
+                </div>
+
+                <!-- Events Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
+                    
+                    <div class="card bg-base-100/60 shadow-lg event-card" data-category="Conference">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-primary text-xs">Conference</span>
+                                <span class="text-xs opacity-60">15 Mar</span>
+                            </div>
+                            <h2 class="card-title text-lg">Annual Tech Summit 2026</h2>
+                            <div class="grid grid-cols-2 gap-3 my-4 text-sm">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-primary">⏰</span>
+                                    <div>
+                                        <div class="text-xs opacity-60">Time</div>
+                                        <div class="font-semibold">09:00 AM - 05:00 PM</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-secondary">📍</span>
+                                    <div>
+                                        <div class="text-xs opacity-60">Location</div>
+                                        <div class="font-semibold">Main Auditorium</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm leading-relaxed mb-3 opacity-90">Join industry experts and innovators for keynote sessions, workshops, and networking opportunities. Topics include AI, cloud computing, and emerging technologies.</p>
+                            <div class="flex items-center space-x-2 text-xs opacity-70 mb-4">
+                                <span>👥 Expected: <strong>500+</strong></span>
+                            </div>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-primary btn-sm">Register Interest</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100/60 shadow-lg event-card" data-category="Sports">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-primary text-xs">Sports</span>
+                                <span class="text-xs opacity-60">18 Mar</span>
+                            </div>
+                            <h2 class="card-title text-lg">Campus Sports Day</h2>
+                            <div class="grid grid-cols-2 gap-3 my-4 text-sm">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-primary">⏰</span>
+                                    <div>
+                                        <div class="text-xs opacity-60">Time</div>
+                                        <div class="font-semibold">08:00 AM - 04:00 PM</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-secondary">📍</span>
+                                    <div>
+                                        <div class="text-xs opacity-60">Location</div>
+                                        <div class="font-semibold">Sports Complex</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm leading-relaxed mb-3 opacity-90">Compete in cricket, volleyball, badminton, and athletics. All students welcome. Register your team by March 15.</p>
+                            <div class="flex items-center space-x-2 text-xs opacity-70 mb-4">
+                                <span>👥 Expected: <strong>1000+</strong></span>
+                            </div>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-primary btn-sm">Register Interest</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100/60 shadow-lg event-card" data-category="Arts & Culture">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-primary text-xs">Arts & Culture</span>
+                                <span class="text-xs opacity-60">12 Mar</span>
+                            </div>
+                            <h2 class="card-title text-lg">Cultural Fest Auditions</h2>
+                            <div class="grid grid-cols-2 gap-3 my-4 text-sm">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-primary">⏰</span>
+                                    <div>
+                                        <div class="text-xs opacity-60">Time</div>
+                                        <div class="font-semibold">04:00 PM - 07:00 PM</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-secondary">📍</span>
+                                    <div>
+                                        <div class="text-xs opacity-60">Location</div>
+                                        <div class="font-semibold">Performance Hall</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm leading-relaxed mb-3 opacity-90">Open auditions for dance, music, drama, and art performances. Be part of our biggest celebration of the year!</p>
+                            <div class="flex items-center space-x-2 text-xs opacity-70 mb-4">
+                                <span>👥 Expected: <strong>Open</strong></span>
+                            </div>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-primary btn-sm">Register Interest</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100/60 shadow-lg event-card" data-category="Entrepreneurship">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-primary text-xs">Entrepreneurship</span>
+                                <span class="text-xs opacity-60">22 Mar</span>
+                            </div>
+                            <h2 class="card-title text-lg">Startup Pitch Competition</h2>
+                            <div class="grid grid-cols-2 gap-3 my-4 text-sm">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-primary">⏰</span>
+                                    <div>
+                                        <div class="text-xs opacity-60">Time</div>
+                                        <div class="font-semibold">02:00 PM - 06:00 PM</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-secondary">📍</span>
+                                    <div>
+                                        <div class="text-xs opacity-60">Location</div>
+                                        <div class="font-semibold">Innovation Hub</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm leading-relaxed mb-3 opacity-90">Showcase your startup ideas and compete for funding. Pitch in front of investors and mentors. Win up to ₹1,00,000!</p>
+                            <div class="flex items-center space-x-2 text-xs opacity-70 mb-4">
+                                <span>👥 Expected: <strong>20 teams</strong></span>
+                            </div>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-primary btn-sm">Register Interest</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100/60 shadow-lg event-card" data-category="Networking">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-primary text-xs">Networking</span>
+                                <span class="text-xs opacity-60">20 Mar</span>
+                            </div>
+                            <h2 class="card-title text-lg">Alumni Networking Night</h2>
+                            <div class="grid grid-cols-2 gap-3 my-4 text-sm">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-primary">⏰</span>
+                                    <div>
+                                        <div class="text-xs opacity-60">Time</div>
+                                        <div class="font-semibold">06:00 PM - 09:00 PM</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-secondary">📍</span>
+                                    <div>
+                                        <div class="text-xs opacity-60">Location</div>
+                                        <div class="font-semibold">Banquet Hall</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm leading-relaxed mb-3 opacity-90">Connect with successful KCC alumni. Great opportunity for career guidance and mentorship. Light refreshments provided.</p>
+                            <div class="flex items-center space-x-2 text-xs opacity-70 mb-4">
+                                <span>👥 Expected: <strong>100+</strong></span>
+                            </div>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-primary btn-sm">Register Interest</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100/60 shadow-lg event-card" data-category="Workshop">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-primary text-xs">Workshop</span>
+                                <span class="text-xs opacity-60">14 Mar</span>
+                            </div>
+                            <h2 class="card-title text-lg">Workshop: Web Development Basics</h2>
+                            <div class="grid grid-cols-2 gap-3 my-4 text-sm">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-primary">⏰</span>
+                                    <div>
+                                        <div class="text-xs opacity-60">Time</div>
+                                        <div class="font-semibold">10:00 AM - 01:00 PM</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-secondary">📍</span>
+                                    <div>
+                                        <div class="text-xs opacity-60">Location</div>
+                                        <div class="font-semibold">Lab 3</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm leading-relaxed mb-3 opacity-90">Learn HTML, CSS, and JavaScript fundamentals. Perfect for beginners. Bring your laptop. Limited seats - register now!</p>
+                            <div class="flex items-center space-x-2 text-xs opacity-70 mb-4">
+                                <span>👥 Expected: <strong>30</strong></span>
+                            </div>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-primary btn-sm">Register Interest</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <script>
+        function filterEvents(category) {
+            const cards = document.querySelectorAll('.event-card');
+            const buttons = document.querySelectorAll('button[onclick^="filterEvents"]');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = '';
+                    card.classList.add('animate-fade-in');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+    </style>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

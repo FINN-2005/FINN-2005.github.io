@@ -1,0 +1,15 @@
+# Configuration for GitHub Pages
+theme: minima
+title: KCC Student Portal
+description: Student Portal - Dashboard, Notices, Assignments, Events, and more
+
+# Build settings
+markdown: kramdown
+
+# Exclude files from build
+exclude:
+  - .gitignore
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules

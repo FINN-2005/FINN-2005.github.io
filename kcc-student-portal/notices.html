@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCC Student Portal - Notices</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        (function() {
+            const stored = localStorage.getItem('theme');
+            if (stored) {
+                document.documentElement.setAttribute('data-theme', stored);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-base-200">
+
+    <div class="flex h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-base-100/75 backdrop-blur border-r overflow-y-auto">
+
+            <div class="p-6 border-b">
+                <h1 class="text-xl font-bold">KCC Portal</h1>
+                <p class="text-sm opacity-60">Student Dashboard</p>
+            </div>
+
+            <ul class="menu p-4 gap-2">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="notices.html" class="active">Notices</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="documents.html">Documents</a></li>
+            </ul>
+
+        </aside>
+
+        <!-- Main Area -->
+        <div class="flex-1 flex flex-col">
+
+            <!-- Navbar -->
+            <header class="navbar bg-base-100/75 border-b backdrop-blur">
+
+                <div class="flex-1 px-6">
+                    <h2 class="text-lg font-semibold">KCC Student Portal</h2>
+                </div>
+
+                <div class="flex-none px-6 flex items-center space-x-4">
+                    <button id="theme-toggle" class="btn btn-ghost btn-circle" title="Toggle light/dark">
+                        🌙
+                    </button>
+                </div>
+
+            </header>
+
+            <!-- Page Content -->
+            <main class="flex-1 overflow-y-auto p-6">
+
+                <div class="page-header mb-8">
+                    <h1 class="text-2xl font-bold">Notices</h1>
+                    <p class="text-sm opacity-70 mt-2">Important announcements and updates from the college</p>
+                </div>
+
+                <!-- Notices Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <div class="card bg-base-100/60 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-primary text-xs">📢 Notice</span>
+                                <span class="text-xs opacity-60">05-03-2026</span>
+                            </div>
+                            <h2 class="card-title text-lg leading-tight">Mid Semester Exam Schedule Released</h2>
+                            <p class="text-sm leading-relaxed my-3 opacity-90">The mid semester exam schedule has been published. Please check with your department for the detailed timetable.</p>
+                            <div class="card-actions justify-end mt-4">
+                                <button class="btn btn-primary btn-sm">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100/60 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-primary text-xs">📢 Notice</span>
+                                <span class="text-xs opacity-60">04-03-2026</span>
+                            </div>
+                            <h2 class="card-title text-lg leading-tight">Hackathon Registration Open</h2>
+                            <p class="text-sm leading-relaxed my-3 opacity-90">Students can now register for the annual KCC hackathon. Last date for registration is March 20.</p>
+                            <div class="card-actions justify-end mt-4">
+                                <button class="btn btn-primary btn-sm">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100/60 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-primary text-xs">📢 Notice</span>
+                                <span class="text-xs opacity-60">02-03-2026</span>
+                            </div>
+                            <h2 class="card-title text-lg leading-tight">Library Maintenance</h2>
+                            <p class="text-sm leading-relaxed my-3 opacity-90">The library will remain closed on Sunday due to scheduled maintenance.</p>
+                            <div class="card-actions justify-end mt-4">
+                                <button class="btn btn-primary btn-sm">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100/60 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-primary text-xs">📢 Notice</span>
+                                <span class="text-xs opacity-60">01-03-2026</span>
+                            </div>
+                            <h2 class="card-title text-lg leading-tight">Placement Drive Announcement</h2>
+                            <p class="text-sm leading-relaxed my-3 opacity-90">Infosys campus placement drive will be conducted next week for final year students.</p>
+                            <div class="card-actions justify-end mt-4">
+                                <button class="btn btn-primary btn-sm">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

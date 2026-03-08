@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCC Student Portal - Documents</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        (function() {
+            const stored = localStorage.getItem('theme');
+            if (stored) {
+                document.documentElement.setAttribute('data-theme', stored);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-base-200">
+
+    <div class="flex h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-base-100/75 backdrop-blur border-r overflow-y-auto">
+
+            <div class="p-6 border-b">
+                <h1 class="text-xl font-bold">KCC Portal</h1>
+                <p class="text-sm opacity-60">Student Dashboard</p>
+            </div>
+
+            <ul class="menu p-4 gap-2">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="notices.html">Notices</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="documents.html" class="active">Documents</a></li>
+            </ul>
+
+        </aside>
+
+        <!-- Main Area -->
+        <div class="flex-1 flex flex-col">
+
+            <!-- Navbar -->
+            <header class="navbar bg-base-100/75 border-b backdrop-blur">
+
+                <div class="flex-1 px-6">
+                    <h2 class="text-lg font-semibold">KCC Student Portal</h2>
+                </div>
+
+                <div class="flex-none px-6 flex items-center space-x-4">
+                    <button id="theme-toggle" class="btn btn-ghost btn-circle" title="Toggle light/dark">
+                        🌙
+                    </button>
+                </div>
+
+            </header>
+
+            <!-- Page Content -->
+            <main class="flex-1 overflow-y-auto p-6">
+
+                <div class="page-header mb-8">
+                    <h1 class="text-2xl font-bold">Documents</h1>
+                    <p class="text-sm opacity-70 mt-2">Access course materials, syllabus, and study resources</p>
+                </div>
+
+                <!-- Documents Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <div class="card bg-base-100/60 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-accent text-xs">PDF</span>
+                                <span class="text-xs opacity-60">2026-02-15</span>
+                            </div>
+                            <div class="flex items-start space-x-3 mb-4">
+                                <div class="text-3xl">📝</div>
+                                <div class="flex-1">
+                                    <h2 class="card-title text-base leading-tight">Data Structures Syllabus.pdf</h2>
+                                    <div class="text-xs opacity-70 mt-1">Document</div>
+                                </div>
+                            </div>
+                            <div class="text-sm opacity-80 mb-4 space-y-1">
+                                <div>💾 2.4 MB</div>
+                                <div>📅 Uploaded: 2026-02-15</div>
+                            </div>
+                            <div class="card-actions justify-end">
+                                <a href="#" class="btn btn-primary btn-sm" download>
+                                    💾 Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100/60 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-accent text-xs">PDF</span>
+                                <span class="text-xs opacity-60">2026-02-20</span>
+                            </div>
+                            <div class="flex items-start space-x-3 mb-4">
+                                <div class="text-3xl">📝</div>
+                                <div class="flex-1">
+                                    <h2 class="card-title text-base leading-tight">Operating Systems Lecture Notes.pdf</h2>
+                                    <div class="text-xs opacity-70 mt-1">Document</div>
+                                </div>
+                            </div>
+                            <div class="text-sm opacity-80 mb-4 space-y-1">
+                                <div>💾 5.1 MB</div>
+                                <div>📅 Uploaded: 2026-02-20</div>
+                            </div>
+                            <div class="card-actions justify-end">
+                                <a href="#" class="btn btn-primary btn-sm" download>
+                                    💾 Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100/60 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-accent text-xs">ZIP</span>
+                                <span class="text-xs opacity-60">2026-02-25</span>
+                            </div>
+                            <div class="flex items-start space-x-3 mb-4">
+                                <div class="text-3xl">📁</div>
+                                <div class="flex-1">
+                                    <h2 class="card-title text-base leading-tight">AI Course Material.zip</h2>
+                                    <div class="text-xs opacity-70 mt-1">Document</div>
+                                </div>
+                            </div>
+                            <div class="text-sm opacity-80 mb-4 space-y-1">
+                                <div>💾 12.8 MB</div>
+                                <div>📅 Uploaded: 2026-02-25</div>
+                            </div>
+                            <div class="card-actions justify-end">
+                                <a href="#" class="btn btn-primary btn-sm" download>
+                                    💾 Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100/60 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-accent text-xs">PDF</span>
+                                <span class="text-xs opacity-60">2026-03-01</span>
+                            </div>
+                            <div class="flex items-start space-x-3 mb-4">
+                                <div class="text-3xl">📝</div>
+                                <div class="flex-1">
+                                    <h2 class="card-title text-base leading-tight">Database Design Guide.pdf</h2>
+                                    <div class="text-xs opacity-70 mt-1">Document</div>
+                                </div>
+                            </div>
+                            <div class="text-sm opacity-80 mb-4 space-y-1">
+                                <div>💾 3.2 MB</div>
+                                <div>📅 Uploaded: 2026-03-01</div>
+                            </div>
+                            <div class="card-actions justify-end">
+                                <a href="#" class="btn btn-primary btn-sm" download>
+                                    💾 Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100/60 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-accent text-xs">DOCX</span>
+                                <span class="text-xs opacity-60">2026-03-02</span>
+                            </div>
+                            <div class="flex items-start space-x-3 mb-4">
+                                <div class="text-3xl">📄</div>
+                                <div class="flex-1">
+                                    <h2 class="card-title text-base leading-tight">CN Lab Manual.docx</h2>
+                                    <div class="text-xs opacity-70 mt-1">Document</div>
+                                </div>
+                            </div>
+                            <div class="text-sm opacity-80 mb-4 space-y-1">
+                                <div>💾 1.8 MB</div>
+                                <div>📅 Uploaded: 2026-03-02</div>
+                            </div>
+                            <div class="card-actions justify-end">
+                                <a href="#" class="btn btn-primary btn-sm" download>
+                                    💾 Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-base-100/60 shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="card-body">
+                            <div class="flex items-start justify-between mb-3">
+                                <span class="badge badge-accent text-xs">PDF</span>
+                                <span class="text-xs opacity-60">2026-03-03</span>
+                            </div>
+                            <div class="flex items-start space-x-3 mb-4">
+                                <div class="text-3xl">📝</div>
+                                <div class="flex-1">
+                                    <h2 class="card-title text-base leading-tight">Exam Schedule 2026.pdf</h2>
+                                    <div class="text-xs opacity-70 mt-1">Document</div>
+                                </div>
+                            </div>
+                            <div class="text-sm opacity-80 mb-4 space-y-1">
+                                <div>💾 0.9 MB</div>
+                                <div>📅 Uploaded: 2026-03-03</div>
+                            </div>
+                            <div class="card-actions justify-end">
+                                <a href="#" class="btn btn-primary btn-sm" download>
+                                    💾 Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

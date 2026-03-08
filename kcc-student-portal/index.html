@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCC Student Portal - Dashboard</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        // apply persisted or system theme before content loads
+        (function() {
+            const stored = localStorage.getItem('theme');
+            if (stored) {
+                document.documentElement.setAttribute('data-theme', stored);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-base-200">
+
+    <div class="flex h-screen">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-base-100/75 backdrop-blur border-r overflow-y-auto">
+
+            <div class="p-6 border-b">
+                <h1 class="text-xl font-bold">KCC Portal</h1>
+                <p class="text-sm opacity-60">Student Dashboard</p>
+            </div>
+
+            <ul class="menu p-4 gap-2">
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="notices.html">Notices</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+                <li><a href="documents.html">Documents</a></li>
+            </ul>
+
+        </aside>
+
+        <!-- Main Area -->
+        <div class="flex-1 flex flex-col">
+
+            <!-- Navbar -->
+            <header class="navbar bg-base-100/75 border-b backdrop-blur">
+
+                <div class="flex-1 px-6">
+                    <h2 class="text-lg font-semibold">KCC Student Portal</h2>
+                </div>
+
+                <div class="flex-none px-6 flex items-center space-x-4">
+                    <!-- theme toggle -->
+                    <button id="theme-toggle" class="btn btn-ghost btn-circle" title="Toggle light/dark">
+                        🌙
+                    </button>
+                </div>
+
+            </header>
+
+            <!-- Page Content -->
+            <main class="flex-1 overflow-y-auto p-6">
+
+                <div class="page-header mb-6">
+                    <h1 class="text-2xl font-bold">Dashboard</h1>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- Notices -->
+                    <div class="card bg-base-100 shadow">
+                        <div class="card-body">
+                            <h2 class="card-title">Recent Notices</h2>
+                            <ul class="text-sm space-y-2">
+                                <li>
+                                    <strong>Mid Semester Exam Schedule Released</strong>
+                                    <div class="opacity-70">2026-03-05</div>
+                                </li>
+                                <li>
+                                    <strong>Hackathon Registration Open</strong>
+                                    <div class="opacity-70">2026-03-04</div>
+                                </li>
+                                <li>
+                                    <strong>Library Maintenance</strong>
+                                    <div class="opacity-70">2026-03-02</div>
+                                </li>
+                            </ul>
+                            <div class="card-actions justify-end">
+                                <a href="notices.html" class="btn btn-sm btn-primary">View All</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Assignments -->
+                    <div class="card bg-base-100 shadow">
+                        <div class="card-body">
+                            <h2 class="card-title">Assignments</h2>
+                            <ul class="text-sm space-y-2">
+                                <li>
+                                    <strong>Linked List Implementation</strong>
+                                    <div class="opacity-70">Due: 2026-03-15</div>
+                                </li>
+                                <li>
+                                    <strong>Process Scheduling Report</strong>
+                                    <div class="opacity-70">Due: 2026-03-18</div>
+                                </li>
+                                <li>
+                                    <strong>Neural Network Basics</strong>
+                                    <div class="opacity-70">Due: 2026-03-20</div>
+                                </li>
+                            </ul>
+                            <div class="card-actions justify-end">
+                                <a href="assignments.html" class="btn btn-sm btn-primary">View All</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Events -->
+                    <div class="card bg-base-100 shadow">
+                        <div class="card-body">
+                            <h2 class="card-title">Upcoming Events</h2>
+                            <ul class="text-sm space-y-2">
+                                <li>
+                                    <strong>Annual Tech Summit 2026</strong>
+                                    <div class="opacity-70">📅 2026-03-15</div>
+                                </li>
+                                <li>
+                                    <strong>Cultural Fest Auditions</strong>
+                                    <div class="opacity-70">📅 2026-03-12</div>
+                                </li>
+                                <li>
+                                    <strong>Workshop: Web Development Basics</strong>
+                                    <div class="opacity-70">📅 2026-03-14</div>
+                                </li>
+                            </ul>
+                            <div class="card-actions justify-end">
+                                <a href="events.html" class="btn btn-sm btn-primary">View All</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timetable Preview -->
+                    <div class="card bg-base-100 shadow">
+                        <div class="card-body">
+                            <h2 class="card-title">This Week's Classes</h2>
+                            <ul class="text-sm space-y-2">
+                                <li>
+                                    <strong>Data Structures</strong>
+                                    <div class="opacity-70">Monday, 09:00-10:00, CSE-201</div>
+                                </li>
+                                <li>
+                                    <strong>Artificial Intelligence</strong>
+                                    <div class="opacity-70">Tuesday, 09:00-10:00, CSE-205</div>
+                                </li>
+                                <li>
+                                    <strong>Database Systems</strong>
+                                    <div class="opacity-70">Wednesday, 11:00-12:00, CSE-202</div>
+                                </li>
+                            </ul>
+                            <div class="card-actions justify-end">
+                                <a href="timetable.html" class="btn btn-sm btn-primary">View All</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
