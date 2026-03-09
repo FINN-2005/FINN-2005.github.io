@@ -1,0 +1,47 @@
+
+body {
+    background-color: RGB(255,255,255);
+    color: black;
+}
+
+.no-transition * {
+    transition: none !important;
+}
+
+
+
+
+/* ===================================================== */
+/* ===================== DARK MODE ===================== */
+/* ===================================================== */
+
+body.dark_theme {
+  background: #222;
+  color: white;
+}
+
+body.dark_theme button {
+  background: #444;
+  color: white;
+}
+
+.toggle_button {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+
+    padding: 0.5rem 1rem;
+    border-radius: 0.8rem;
+    border: none;
+
+    background: #e5e5e5;
+    color: #111;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toggle_button:hover {
+    background: radial-gradient(circle at center, #ffffff66, transparent 70%), #a8a8a8;
+    /* transform: translateY(-2px); */
+}
