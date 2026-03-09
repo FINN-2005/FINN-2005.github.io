@@ -14,8 +14,15 @@
 
     <!-- notes app code -->
     <div class="notes-app">
-        <button class="primary-buttons" onclick="make_new_note()"> + New Note</button>
+        <div class="notes-controls">
+            <button class="primary-buttons" onclick="make_new_note()">+ New Note</button>
+            <button class="primary-buttons" onclick="clear_notes()">X Clear Notes</button>
+            <button class="primary-buttons" onclick="delete_note()">- Delete Note</button>
+        </div>
         <div class="notes-grid">
+            <!-- filled by js -->
+        </div>
+        <div class="note-viewer">
             <!-- filled by js -->
         </div>
     </div>
