@@ -8,22 +8,10 @@ body {
     transition: none !important;
 }
 
-
-
-
-/* ===================================================== */
-/* ===================== DARK MODE ===================== */
-/* ===================================================== */
-
-body.dark_theme {
-  background: #222;
-  color: white;
+.temp {
+    display: none;
 }
 
-body.dark_theme button {
-  background: #444;
-  color: white;
-}
 
 .toggle_button {
     position: fixed;
@@ -43,5 +31,76 @@ body.dark_theme button {
 
 .toggle_button:hover {
     background: radial-gradient(circle at center, #ffffff66, transparent 70%), #a8a8a8;
-    /* transform: translateY(-2px); */
+}
+
+.notes-grid {
+    /* border: 2px solid red;; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    width: 80vw;
+    margin: 8vw;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.note-card {
+    /* border: 2px solid yellow; */
+    background-color: #e4e4e4;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: all 0.2s ease;
+}
+
+.note-card:hover {
+    transform: translateY(-3px);
+    background-color: #dadada;
+}
+
+.note-title {
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 0.1rem;
+}
+
+.note-datetime {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.6rem;
+}
+
+.note-body {
+    font-size: 0.9rem;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+
+/* ===================================================== */
+/* ===================== DARK MODE ===================== */
+/* ===================================================== */
+
+body.dark_theme {
+  background: #222;
+  color: white;
+}
+
+body.dark_theme button {
+  background: #444;
+  color: white;
+}
+
+body.dark_theme .note-card {
+    /* border: 2px solid yellow; */
+    background-color: #393939;
+    color: white;
+}
+
+body.dark_theme .note-card:hover {
+    background-color: #464646;
 }

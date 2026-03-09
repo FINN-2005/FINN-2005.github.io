@@ -6,11 +6,20 @@
     <title>Generic Notes App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="no-transitions">
+<body class="no-transition">
 
-    <h1>Hello World</h1>
+    <!-- dark mode code -->
+    <h1 class="temp">Hello World</h1>
     <button class="toggle_button" onclick="toggle_dark_mode()">☀️</button>
-        
+
+    <!-- notes app code -->
+    <div class="notes-app">
+        <button class="primary-buttons" onclick="make_new_note()"> + New Note</button>
+        <div class="notes-grid">
+            <!-- filled by js -->
+        </div>
+    </div>
+
     <script src="main.js"></script>
 </body>
 </html>
