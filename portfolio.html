@@ -4,303 +4,200 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dewansh | Systems & Simulation Engineer</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- AOS Scroll Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-
-        /* Subtle animated background */
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .animated-bg {
-            background: linear-gradient(-45deg, #020617, #0f172a, #0b1120, #020617);
-            background-size: 300% 300%;
-            animation: gradientMove 20s ease infinite;
-        }
-
-        /* Very subtle text glow */
-        .soft-glow {
-            text-shadow: 0 0 6px rgba(34, 211, 238, 0.25);
-        }
-
-        /* Card hover polish */
-        .lift {
-            transition: all 0.25s ease;
-        }
-
-        .lift:hover {
-            transform: translateY(-4px);
-            border-color: rgba(34, 211, 238, 0.4);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Subtle cursor ambient */
-        #cursor-glow {
-            position: fixed;
-            width: 220px;
-            height: 220px;
-            background: rgba(34, 211, 238, 0.035);
-            border-radius: 50%;
-            filter: blur(100px);
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-        }
     </style>
 </head>
 
-<body class="bg-slate-950 text-slate-200 selection:bg-cyan-500 selection:text-black overflow-x-hidden">
+<body class="bg-slate-950 text-slate-200 selection:bg-cyan-500 selection:text-black">
 
-<div id="cursor-glow"></div>
+    <!-- HERO -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+            Dewansh
+        </h1>
 
-<!-- HERO -->
-<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 animated-bg overflow-hidden">
-
-    <!-- Subtle Grid Overlay -->
-    <div class="absolute inset-0 pointer-events-none opacity-5"
-         style="background-image: linear-gradient(to right, #1e293b 1px, transparent 1px),
-                 linear-gradient(to bottom, #1e293b 1px, transparent 1px);
-                background-size: 80px 80px;">
-    </div>
-
-    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 soft-glow z-10" data-aos="fade-up">
-        Dewansh
-    </h1>
-
-    <p class="text-xl md:text-2xl text-cyan-400 font-semibold mb-6 z-10" data-aos="fade-up" data-aos-delay="100">
-        Systems • Simulation • Graphics • Networking
-    </p>
-
-    <p class="max-w-2xl text-slate-400 mb-10 text-base leading-relaxed z-10" data-aos="fade-up" data-aos-delay="200">
-        B.Tech CSIT student focused on systems-level engineering, rendering pipelines,
-        physics simulations, and low-level architectural design.
-        I build complete implementations from scratch to deeply understand
-        performance, structure, and system interaction.
-    </p>
-
-    <div class="flex gap-8 text-sm z-10" data-aos="fade-up" data-aos-delay="300">
-        <a href="mailto:bhalladew@gmail.com" class="hover:text-cyan-400 transition">
-            Email
-        </a>
-        <a href="https://github.com/FINN-2005" target="_blank" class="hover:text-cyan-400 transition">
-            GitHub
-        </a>
-        <span class="text-slate-500">
-            Delhi, India
-        </span>
-    </div>
-</section>
-
-<!-- CORE SKILLS -->
-<section class="py-24 border-y border-slate-800 bg-slate-900/40">
-    <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-16 soft-glow" data-aos="fade-up">
-            Core Skills
-        </h2>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 lift" data-aos="fade-up">
-                <h3 class="text-cyan-400 font-semibold mb-4 text-lg">Languages</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Python (Advanced)<br>
-                    C (Systems Level)
-                </p>
-            </div>
-
-            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 lift" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-cyan-400 font-semibold mb-4 text-lg">Core Domains</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Systems Programming<br>
-                    Physics Simulation<br>
-                    Rendering Pipelines<br>
-                    Networking
-                </p>
-            </div>
-
-            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 lift" data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-cyan-400 font-semibold mb-4 text-lg">Concepts</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Data Structures<br>
-                    Real-Time Systems<br>
-                    Applied Math & Physics<br>
-                    Engine Architecture
-                </p>
-            </div>
-
-            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 lift" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="text-cyan-400 font-semibold mb-4 text-lg">Tools</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Git<br>
-                    Linux<br>
-                    Socket Programming<br>
-                    Pygame
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- FEATURED PROJECTS -->
-<section class="py-24">
-    <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-16 soft-glow" data-aos="fade-up">
-            Featured Projects
-        </h2>
-
-        <div class="grid md:grid-cols-2 gap-10">
-
-            <!-- ALL YOUR ORIGINAL PROJECTS UNMODIFIED EXCEPT lift CLASS -->
-
-            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 lift" data-aos="fade-up">
-                <h3 class="text-xl font-semibold text-cyan-400 mb-4">
-                    pygame_template Framework
-                </h3>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                    Modular Pygame-based framework built to eliminate repetitive
-                    boilerplate and accelerate simulation prototyping.
-                    Includes custom sprite systems, collision handling,
-                    reusable utilities, and experimental 3D rendering support.
-                </p>
-                <p class="text-xs text-slate-500 mb-4">
-                    Python • Pygame
-                </p>
-                <a href="https://github.com/FINN-2005/pygame_template" target="_blank" class="text-sm text-cyan-400 hover:underline">
-                    View on GitHub →
-                </a>
-            </div>
-
-            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 lift" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-xl font-semibold text-cyan-400 mb-4">
-                    Software 3D Renderer
-                </h3>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                    CPU-based rendering pipeline implemented without GPU APIs.
-                    Built to understand matrix transformations, projection systems,
-                    rasterization, and performance trade-offs in graphics pipelines.
-                </p>
-                <p class="text-xs text-slate-500 mb-4">
-                    Python
-                </p>
-                <a href="https://github.com/FINN-2005/Software-Pixel-Renderer" target="_blank" class="text-sm text-cyan-400 hover:underline">
-                    View on GitHub →
-                </a>
-            </div>
-
-            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 lift" data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-xl font-semibold text-cyan-400 mb-4">
-                    Neural Network From Scratch
-                </h3>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                    Implemented a multi-layer perceptron and backpropagation manually
-                    to understand gradient-based optimization and learning mechanics
-                    without relying on high-level ML frameworks.
-                </p>
-                <p class="text-xs text-slate-500 mb-4">
-                    Python • NumPy
-                </p>
-                <a href="https://github.com/FINN-2005/Multi-Layer-Perceptron" target="_blank" class="text-sm text-cyan-400 hover:underline">
-                    View on GitHub →
-                </a>
-            </div>
-
-            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 lift" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="text-xl font-semibold text-cyan-400 mb-4">
-                    Minimal HTTP Server
-                </h3>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                    Lightweight HTTP server built using raw sockets to understand
-                    request parsing, protocol structure, and low-level
-                    networking behavior.
-                </p>
-                <p class="text-xs text-slate-500 mb-4">
-                    Python • Socket Programming
-                </p>
-                <a href="https://github.com/FINN-2005" target="_blank" class="text-sm text-cyan-400 hover:underline">
-                    View on GitHub →
-                </a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- OTHER WORK -->
-<section class="py-24 border-t border-slate-800">
-    <div class="max-w-5xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12 soft-glow" data-aos="fade-up">
-            Other Work
-        </h2>
-
-        <div class="grid md:grid-cols-2 gap-6 text-slate-400 text-sm leading-relaxed" data-aos="fade-up">
-            <div>Physics simulations (particle systems, spring systems, cloth simulation)</div>
-            <div>Mathematical visualizations (Mandelbrot, Dragon Curve, fractals)</div>
-            <div>CNC-style toolpath generator</div>
-            <div>WhatsApp Chat to JSON parser</div>
-            <div>Simulation-based mini games and experiments</div>
-        </div>
-    </div>
-</section>
-
-<!-- INDEPENDENT DEVELOPMENT -->
-<section class="py-24 bg-slate-900/40 border-y border-slate-800">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-10 soft-glow" data-aos="fade-up">
-            Independent Systems & Graphics Development
-        </h2>
-        <p class="text-slate-400 text-base leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-            Over three years of self-directed learning through building complete systems
-            from scratch, including rendering pipelines, physics simulations,
-            networking infrastructure, and modular engine architectures.
-            Focused on internal mechanics, performance trade-offs, and structural clarity.
+        <p class="text-xl md:text-2xl text-cyan-400 font-semibold mb-6">
+            Systems • Simulation • Graphics • Networking
         </p>
-    </div>
-</section>
 
-<!-- TECHNICAL INTERESTS -->
-<section class="py-24">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-10 soft-glow" data-aos="fade-up">
-            Technical Interests
-        </h2>
-        <p class="text-slate-400 text-base leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-            Robotics experimentation, 3D printing, simulation systems,
-            and exploratory engine design.
-            Continuous exploration of low-level architectural systems.
+        <p class="max-w-2xl text-slate-400 mb-10 text-base leading-relaxed">
+            Systems-focused developer building simulations, rendering pipelines, and low-level tools.
+            Currently developing a drone swarm simulation (light show system) and a modular engine in C.
+            I build systems from scratch to understand how they work internally — from math and physics
+            to performance and architecture.
         </p>
-    </div>
-</section>
 
-<!-- FOOTER -->
-<footer class="text-center py-12 border-t border-slate-800 text-slate-500 text-sm">
-    © 2026 Dewansh
-</footer>
+        <div class="flex gap-8 text-sm">
+            <a href="mailto:bhalladew@gmail.com" class="hover:text-cyan-400 transition">
+                Email
+            </a>
+            <a href="https://github.com/FINN-2005" target="_blank" class="hover:text-cyan-400 transition">
+                GitHub
+            </a>
+            <span class="text-slate-500">
+                Delhi, India
+            </span>
+        </div>
+    </section>
 
-<script>
-    AOS.init({
-        duration: 700,
-        once: true
-    });
+    <!-- CORE SKILLS -->
+    <section class="py-24 border-y border-slate-800 bg-slate-900/40">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                Core Skills
+            </h2>
 
-    document.addEventListener("mousemove", function(e) {
-        const glow = document.getElementById("cursor-glow");
-        glow.style.left = e.pageX + "px";
-        glow.style.top = e.pageY + "px";
-    });
-</script>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
+                    <h3 class="text-cyan-400 font-semibold mb-4 text-lg">
+                        Languages
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Python (Advanced)<br>
+                        C (Systems Level)
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
+                    <h3 class="text-cyan-400 font-semibold mb-4 text-lg">
+                        Core Domains
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Systems Programming<br>
+                        Physics Simulation<br>
+                        Rendering Pipelines<br>
+                        Networking
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
+                    <h3 class="text-cyan-400 font-semibold mb-4 text-lg">
+                        Concepts
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Data Structures<br>
+                        Real-Time Systems<br>
+                        Applied Math & Physics<br>
+                        Engine Architecture
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
+                    <h3 class="text-cyan-400 font-semibold mb-4 text-lg">
+                        Tools
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Git<br>
+                        Linux<br>
+                        OpenGL (conceptual)<br>
+                        Raylib<br>
+                        Socket Programming
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                Featured Projects
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 hover:border-cyan-500 transition">
+                    <h3 class="text-xl font-semibold text-cyan-400 mb-4">
+                        Drone Swarm Simulation (In Progress)
+                    </h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                        Simulation of autonomous drone coordination for light shows.
+                        Converts image input into spatial formations and controls multiple agents
+                        to organize into patterns. Focused on swarm behavior, motion systems,
+                        and large-scale coordination.
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">
+                        Python • Simulation • Systems Design
+                    </p>
+                </div>
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 hover:border-cyan-500 transition">
+                    <h3 class="text-xl font-semibold text-cyan-400 mb-4">
+                        pygame_template Framework
+                    </h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                        Custom-built framework for rapid simulation and game prototyping.
+                        Designed to explore engine architecture, modular systems, rendering,
+                        and reusable abstractions. Currently evolving into a C-based engine (FlexC).
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">
+                        Python • Pygame
+                    </p>
+                    <a href="https://github.com/FINN-2005/pygame_template" target="_blank" class="text-sm text-cyan-400 hover:underline">
+                        View on GitHub →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OTHER WORK -->
+    <section class="py-24 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">
+                Other Work
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6 text-slate-400 text-sm leading-relaxed">
+                <div>Physics systems (particle, springs, collisions, soft bodies)</div>
+                <div>Mathematical simulations (Mandelbrot, Mandelbulb, Dragon Curve, IK)</div>
+                <div>CNC toolpath / G-code generation</div>
+                <div>Custom networking (raw sockets, multiplayer protocols)</div>
+                <div>Multiple small games and simulation experiments</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDEPENDENT DEVELOPMENT -->
+    <section class="py-24 bg-slate-900/40 border-y border-slate-800">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-10">
+                Independent Systems & Graphics Development
+            </h2>
+            <p class="text-slate-400 text-base leading-relaxed">
+                Over three years of self-directed learning through building complete systems
+                from scratch, including rendering pipelines, physics simulations,
+                networking infrastructure, and modular engine architectures.
+                Focused on internal mechanics, performance trade-offs, and building systems
+                from first principles instead of relying solely on high-level abstractions.
+            </p>
+        </div>
+    </section>
+
+    <!-- TECHNICAL INTERESTS -->
+    <section class="py-24">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-10">
+                Technical Interests
+            </h2>
+            <p class="text-slate-400 text-base leading-relaxed">
+                Drone systems, swarm simulation, robotics-oriented engineering,
+                engine design, and low-level system architecture.
+                Exploring how complex systems behave, scale, and interact.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-12 border-t border-slate-800 text-slate-500 text-sm">
+        © 2026 Dewansh
+    </footer>
 
 </body>
 </html>
